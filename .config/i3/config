@@ -28,7 +28,8 @@ exec xautolock -time 5 -locker "i3lock -c 682a09" &
 # Redshift blue light killer startup, coordinates of Home@Basel
 exec redshift-gtk -l 47.560:7.572 &
 # Wallpaper
-exec ~/.fehbg &
+#exec ~/.fehbg &
+
 # Nextcloud 
 exec nextcloud &
 
@@ -54,6 +55,8 @@ bindsym $mod+F2 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% &
 bindsym $mod+F1 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym $mod+F4 exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# Switch monitor input to HDMI
+bindsym $mod+F11 exec ddcutil setvcp 60 0x11 &> /dev/null
 # Enable screensaver manually
 bindsym $mod+F7 exec --no-startup-id i3lock -c 682a09
 
