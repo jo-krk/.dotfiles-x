@@ -61,8 +61,8 @@ bindsym $mod+F11 exec ddcutil setvcp 60 0x11 &> /dev/null
 bindsym $mod+F7 exec --no-startup-id i3lock -c 682a09
 
 # Make a screenshot
-bindsym --release $mod+F9 exec /usr/bin/import /tmp/ss-$(date +"%d_%m_%y-%H_%M_%S").png
-bindsym --release $mod+F8 exec /usr/bin/import -pause 3 /tmp/ss-$(date +"%d_%m_%y-%H_%M_%S").png
+bindsym --release $mod+F9 exec /usr/bin/import ~/Downloads/ss/$(date +"%d_%m-%H_%M_%S")-ss.png
+bindsym --release $mod+F8 exec /usr/bin/import -pause 3 ~/Downloads/ss/$(date +"%d_%m-%H_%M_%S")-ss.png
 
 # Set screen brightness to minimal value
 exec light -S 1
