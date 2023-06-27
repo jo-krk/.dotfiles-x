@@ -48,12 +48,11 @@ exec xcompmgr -c -l0 -t0 -r0 -o.00 &
 exec --no-startup-id nm-applet
 
 
-# Use pactl to adjust volume in PulseAudio.
+# Adjust volume in Pipewire
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym $mod+F3 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym $mod+F2 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym $mod+F1 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym $mod+F4 exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym $mod+F3 exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 10%+
+bindsym $mod+F2 exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 10%-
+bindsym $mod+F1 exec --no-startup-id wpctl set-mute @DEFAULT_SINK@ toggle
 
 # Switch monitor input to HDMI
 bindsym $mod+F11 exec ddcutil setvcp 60 0x11 &> /dev/null
